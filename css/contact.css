@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lexend:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+        
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background: #004d40;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+}
+
+.container h1 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.container p {
+    color: #ffffff;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+
+.contact-box {
+    background: #ffffff;
+    display: flex;
+    border-radius: 20px;
+}
+
+.container-left {
+    flex-basis: 60%;
+    padding: 40px 60px;
+}
+
+.container-right {
+    flex-basis: 40%;
+    padding: 40px 60px;
+    background: #00796b;
+    color: #ffffff;
+    border-radius: 0px 20px 20px 0px;
+}
+
+.container-left h3 {
+    font-size: 25px;
+    color: #353535;
+    margin-bottom: 20px;
+}
+
+.container-right h3 {
+    font-size: 25px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.input-row .input-group {
+    flex-basis: 45%;
+}
+
+input {
+    width: 95%;
+    border: none;
+    color: #353535;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+} 
+
+textarea {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 15px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.imp{
+     color: red;
+}
+
+label {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    color: #353535;
+}
+
+button {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    background: #000000;
+    border: none;
+    outline: none;
+    color: #fff;
+    width: 20%;
+    height: 40px;
+    border-radius: 25px;
+    margin-top: 20px;
+    transition: all 0.5s ease 0s;
+    box-shadow: 0px 5px 10px 0px #0000003a;
+}
+
+button:hover {
+    color: #fff;
+    background: #009688;
+    box-shadow: 0px 5px 10px 0px hsla(207, 97%, 35%, 0.431);
+}
+
+tr td:first-child {
+    font-size: 20px;
+    font-weight: 600;
+    padding-right: 20px;
+}
+
+tr td {
+    padding-top: 20px;
+}
+
+iframe {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    margin-top: 30px;
+}
+
+@media only screen and (min-width: 1367px) {
+    .container {
+        width: 70%;
+    }
+
+    .container h1 {
+        font-size: 50px;
+    }
+
+    .container p {
+        font-size: 25px;
+    }
+
+    .container-left,
+    .container-right {
+        padding: 40px;
+    }
+
+    .input-row .input-group {
+        flex-basis: 48%;
+    }
+
+    button {
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 1366px) {
+    .container {
+        width: 70%;
+    }
+
+    .container h1 {
+        font-size: 45px;
+    }
+
+    .container p {
+        font-size: 22px;
+    }
+
+    .container-left,
+    .container-right {
+        padding: 40px;
+    }
+
+    input {
+        width: 90%;
+    }
+
+    .input-row .input-group {
+        flex-basis: 48%;
+    }
+
+    button {
+        width: 60%;
+    }
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+    .contact-box {
+        flex-direction: column;
+    }
+
+    .container {
+        width: 80%;
+    }
+
+    .container h1 {
+        font-size: 40px;
+    }
+
+    .container p {
+        font-size: 22px;
+    }
+
+    .container-left,
+    .container-right {
+        padding: 30px;
+    }
+
+    .input-row {
+        flex-wrap: wrap;
+    }
+
+    .input-row .input-group {
+        flex-basis: 100%;
+        margin-bottom: 15px;
+    }
+
+    button {
+        width: 25%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .container {
+        width: 90%;
+    }
+
+    .container h1 {
+        font-size: 40px;
+    }
+
+    .container p {
+        font-size: 18px;
+    }
+
+    .container-left,
+    .container-right {
+        padding: 20px;
+    }
+
+    .input-row {
+        flex-direction: column;
+    }
+
+    .input-row .input-group {
+        flex-basis: 100%;
+        margin-bottom: 15px;
+    }
+
+    input,
+    textarea {
+        padding: 8px;
+    }
+
+    button {
+        width: 60%;
+    }
+
+    tr td:first-child {
+        font-size: 15px;
+        font-weight: 600;
+        padding-right: 10px;
+    }
+}

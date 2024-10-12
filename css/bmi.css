@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 500px;
+    background-color: #ffffff;
+    border-radius: 25px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.sub-container {
+    display: flex;
+}
+
+.toggle-btn {
+    width: 50%;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.toggle-btn.active {
+    background-color: #00796b;
+    color: white;
+    border-bottom: 3px solid #004d40;
+}
+
+.toggle-btn:hover {
+    background-color: #004d40;
+    color: white;
+}
+
+.form-container {
+    padding: 30px 20px;
+}
+
+.form-container form {
+    display: none;
+}
+
+.form-container form.active {
+    display: block;
+}
+
+.form-control,
+.input-group-text {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #00796b;
+    box-shadow: 0 0 5px rgba(0, 121, 107, 0.5);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.form-container .btn {
+    border-radius: 30px;
+    padding: 12px 25px;
+    background-color: #00796b;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #004d40;
+}
+
+.form-container .btn-check+.btn {
+    background-color: #b2dfdb;
+    border: 1px solid #ced4da;
+    transition: background-color 0.3s ease;
+}
+
+.form-container .btn-check:checked+.btn {
+    background-color: #00796b;
+    color: white;
+}
+
+.form-container .btn .fa-solid {
+    margin-right: 8px;
+}
+#result {
+    margin-top: 20px;
+    background-color: #b2dfdb;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #004d40;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+#result.active{
+    display: block;
+}
+#result.hidden{
+    display: none;
+}
+
+@media (max-width: 576px) {
+    .toggle-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .sub-container {
+        padding: 5px;
+    }
+
+    .form-container {
+        padding: 15px;
+    }
+}
