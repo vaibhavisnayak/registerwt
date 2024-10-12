@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="./css/contact.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Get in Touch</h1>
+        <p>Fill up the form to get in touch with us.</p>
+
+        <div class="contact-box">
+            <div class="container-left">
+                <h3>Fill the Form</h3>
+                <form id="contactForm" onsubmit="return validateForm()">
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Name<span class="imp">*</span></label>
+                            <input type="text" id="name" placeholder="Enter your Name" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Phone<span class="imp">*</span></label>
+                            <input type="text" id="phone" placeholder="+91 1234567890" required>
+                        </div>
+                    </div>
+                    
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Email<span class="imp">*</span></label>
+                            <input type="email" id="email" placeholder="youremail@gmail.com" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Subject</label>
+                            <input type="text" id="subject" placeholder="Inquiry">
+                        </div>                       
+                    </div>
+
+                    <label>Message<span class="imp">*</span></label>
+                    <textarea rows="10" id="message" placeholder="Enter your Message" required></textarea>
+                    <button type="submit">SEND MESSAGE</button>
+                </form>
+            </div>
+            <div class="container-right">
+                <h3>Reach Us</h3>
+                <table>
+                    <tr>
+                        <td>Email: </td>
+                        <td>mit@manipal.edu</td>
+                    </tr>
+
+                    <tr>
+                        <td>Phone: </td>
+                        <td>+91 4522-2522</td>
+                    </tr>
+
+                    <tr>
+                        <td>Address: </td>
+                        <td><b>Manipal Institute of Technology</b><br>
+                            Udupi - Karkala Rd, Eshwar Nagar,<br>
+                            Manipal, Karnataka 576104</td>
+                    </tr>
+                </table>
+                
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3881.9636356500496!2d74.79024747528582!3d13.352537306411728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbca4a7d2c4edb7%3A0x8d588d4fb81d861f!2sManipal%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1728410615267!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/contact.js"></script>
+</body>
+</html>

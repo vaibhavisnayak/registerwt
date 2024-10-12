@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/bmi.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="sub-container text-center">
+            <button id="metric-btn" class="toggle-btn active">Metric Units</button>
+            <button id="us-btn" class="toggle-btn">US Units</button>
+        </div>
+        <div class="form-container">
+            <!-- Metric Form -->
+            <form name="metricForm" id="metricForm" class="active">
+                <div class="mb-3">
+                    <label for="metric-age" class="form-label">Age</label>
+                    <input type="number" min="5" max="100" class="form-control" id="metric-age" required>
+                    <div class="invalid-feedback" id="metric-age-feedback">Please enter a valid age between 5 and 100.
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-text">Kg</span>
+                    <input type="number" class="form-control" id="metric-weight" min="5" max="1000" required
+                        placeholder="Weight">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-text">CM</span>
+                    <input type="number" class="form-control" id="metric-height" min="5" max="500" required
+                        placeholder="Height">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Gender</label>
+                    <div class="d-flex">
+                        <input type="radio" class="btn-check" name="metric-gender" value="male" id="metric-male"
+                            autocomplete="off" required>
+                        <label class="btn btn-outline-secondary me-2" for="metric-male"><i class="fa-solid fa-mars"></i>
+                            Male</label>
+
+                        <input type="radio" class="btn-check" name="metric-gender" value="female" id="metric-female"
+                            autocomplete="off" required>
+                        <label class="btn btn-outline-secondary" for="metric-female"><i class="fa-solid fa-venus"></i>
+                            Female</label>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" id="metricSubmit-btn" class="btn btn-primary me-2"><i
+                            class="fa-solid fa-calculator"></i> Calculate</button>
+                    <input type="reset" id="clear" class="btn btn-light" value="Clear">
+                </div>
+            </form>
+
+            <!-- US Form -->
+            <form name="usForm" id="usForm">
+                <div class="mb-3">
+                    <label for="us-age" class="form-label">Age</label>
+                    <input type="number" min="5" max="100" class="form-control" id="us-age" required>
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-text">Pound</span>
+                    <input type="number" class="form-control" id="us-weight" min="5" max="1000" required
+                        placeholder="Weight">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-group-text">Feet</span>
+                    <input type="number" id="us-feet" class="form-control" min="0" required placeholder="Feet">
+                    <span class="input-group-text">Inches</span>
+                    <input type="number" id="us-inches" class="form-control" min="0" max="11" required
+                        placeholder="Inches">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Gender</label>
+                    <div class="d-flex">
+                        <input type="radio" class="btn-check" name="us-gender" value="male" id="us-male"
+                            autocomplete="off" required>
+                        <label class="btn btn-outline-secondary me-2" for="us-male"><i class="fa-solid fa-mars"></i>
+                            Male</label>
+
+                        <input type="radio" class="btn-check" name="us-gender" value="female" id="us-female"
+                            autocomplete="off" required>
+                        <label class="btn btn-outline-secondary" for="us-female"><i class="fa-solid fa-venus"></i>
+                            Female</label>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" id="usSubmit-btn" class="btn btn-primary me-2"><i
+                            class="fa-solid fa-calculator"></i> Calculate</button>
+                            <input type="reset" class="btn btn-light" value="Clear">
+                </div>
+            </form>
+
+            <div>
+                <p class="hidden" id="result"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/bmi.js">
+
+    </script>
+</body>
+
+</html>
