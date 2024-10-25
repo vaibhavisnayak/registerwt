@@ -1,0 +1,412 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(144, 249, 144, 0.5); /* Light green for body */
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 18px; /* Increased base font size */
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #4CAF50; /* Green background for header */
+    color: rgb(255, 255, 255); /* White text color for "NutriBite" */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: fixed; /* Fix header position */
+    top: 0px; /* Stick to the top */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it appears above other content */
+    transition: background-color 0.3s; /* Smooth transition for background */
+}
+
+header h1 {
+    margin: 0;
+    color: #f6f8f6; /* Color for "NutriBite" */
+}
+header nav {
+    margin-left: auto; /* Aligns the navigation to the right */
+}
+
+header nav ul {
+    list-style-type: none; /* Removes bullet points */
+    padding: 0; /* Removes default padding */
+    display: flex; /* Aligns items in a row */
+}
+
+header nav ul li {
+    margin: 0 15px; /* Space between links */
+}
+
+header nav ul li a {
+    text-decoration: none; /* Removes underline from links */
+    color: #fff; /* White color for text */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+header nav ul li a:hover {
+    color: #d0f12d; /* Change color on hover */
+}
+
+aside ul {
+    border-left: #121212 solid 3px;
+}
+
+button {
+    min-width: 75px;
+    min-height: 75px;
+    background-color: #ffffff; /* White background for button */
+    border: none;
+    color: rgb(11, 11, 11);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 50px;
+}
+
+button:hover {
+    background-color: #22e292;
+}
+.header-toggle {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    font-size: 24px;
+    color: #4CAF50; /* Green for menu toggle */
+}
+.menu-toggle {
+    
+    display: none; /* Hidden by default */
+    position: fixed;
+    cursor: pointer;
+    font-size: 24px;
+   padding-top: 30px;
+   min-width: 45px;
+   z-index: 3;
+    color: #4CAF50; /* Green for menu toggle */
+}
+
+.container {
+    display: flex;
+   z-index: 2;
+    margin-top: 100px; /* Space for fixed header */
+    position: relative; /* Set container to relative for absolute positioning of footer */
+}
+.add_border{
+    min-width: fit-content;
+}
+.sidebar {
+    margin-top: 30px;
+    cursor: pointer;
+    width: 300px; /* Increased width */
+    background-color: #f7f7f6; /* Stylish light green */
+    padding: 20px; /* Increased padding */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fix sidebar position */
+    top: 70px; /* Start below header */
+    height: calc(100vh - 70px); /* Full height minus header */
+    z-index: 0; /* Sidebar appears below footer */
+    overflow-y: auto; /* Allow scrolling within sidebar */
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    font-size: 1.5em; /* Increased font size */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0; /* Increased margin */
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px; /* Increased padding for better click area */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.sidebar ul li a:hover {
+    background-color: rgba(165, 214, 167, 0.8); /* Light hover effect */
+    color: #fff; /* Change text color on hover */
+}
+.sidebar ul li a.active {
+    background-color: rgba(76, 240, 82, 0.8); /* Example highlight color */
+    color: #000000; /* Example text color */
+
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 320px; /* Space from the sidebar */
+}
+
+.about {
+    padding: 30px; /* Increased padding */
+    max-width: 600px;
+    margin: 20px auto; /* Increased margin */
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s, transform 0.3s; /* Add transition for zoom */
+    background-color: #ffffff; /* White background */
+}
+
+.about:hover {
+    background-color: #f0f0f0; /* Light background on hover */
+    transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+footer {
+    background-color: #4CAF50; /* Green background for footer */
+    color: white; /* White text color */
+    padding: 20px;
+    position: relative; /* Position relative to container */
+    z-index: 10; /* Set z-index higher than sidebar */
+    text-align: center; /* Center text */
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+    max-width: 1200px; /* Limit width for larger screens */
+    margin: 0 auto; /* Center the container */
+}
+
+.footer-links {
+    margin-bottom: 15px; /* Space between sections */
+}
+
+.footer-links p {
+    margin: 0 0 10px; /* Margin below the paragraph */
+}
+
+.footer-links ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+    display: flex; /* Flexbox for links */
+    flex-wrap: wrap; /* Wrap items on small screens */
+    justify-content: center; /* Center the links */
+}
+
+.footer-links ul li {
+    margin: 0 15px; /* Space between links */
+}
+
+.footer-links ul li a {
+    color: white; /* White text color for links */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.footer-links ul li a:hover {
+    color: #d0f12d; /* Highlight color on hover */
+}
+
+
+.faq-section {
+    max-width: 600px; /* Limit the width */
+    margin: 20px auto; /* Center the section */
+    padding: 20px; /* Add some padding */
+    background-color: #fefbfb; /* Dark background for dark theme */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    color: #060606; /* White text */
+}
+
+.faq h2 {
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.faq {
+    margin-bottom: 15px; /* Space between questions */
+}
+
+.faq-question {
+    cursor: pointer; /* Change cursor to pointer */
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px; /* Padding for question */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
+    font-size: 14px; /* Smaller font size for question */
+}
+
+.faq-question:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.faq-answer {
+    display: none; /* Hide answers by default */
+    padding: 10px; /* Padding for answers */
+    border: 1px solid #ddd; /* Border around answer */
+    border-radius: 4px; /* Rounded corners */
+    margin-top: 5px; /* Space above answer */
+    background-color: #f1f1f1; /* Light grey background */
+    color: #333; /* Dark text for answer */
+}
+
+.faq-question:focus + .faq-answer,
+.faq-question.active + .faq-answer {
+    display: block; /* Show answer on focus or when active */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-links ul {
+        flex-direction: column; /* Stack links vertically on small screens */
+        align-items: center; /* Center the links */
+    }
+
+    .footer-links ul li {
+        margin: 5px 0; /* Space for vertical stacking */
+    }
+}
+
+.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-theme header {
+    background-color: rgba(30, 30, 30, 0.9); /* Dark transparent background */
+}
+
+.dark-theme button {
+    background-color: #f9f9f8;
+}
+
+.dark-theme .sidebar {
+    background-color: #2e2e2e;
+    color: white;
+}
+
+.dark-theme .sidebar ul li a {
+    color: white;
+}
+
+.dark-theme .sidebar ul li a:hover {
+    background-color: #444; /* Darker background on hover */
+    color: #fff; /* Ensure text is visible */
+}
+
+.dark-theme .about {
+    background-color: #2a2a2a; /* Grey background for about section */
+}
+
+.dark-theme .about:hover {
+    background-color: #333; /* Dark background on hover */
+    color: #fff; /* Ensure text is visible */
+    transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+.dark-theme footer {
+    background-color: #2a2a2a;
+    color: #ddd; /* Dark theme footer text color */
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .sidebar {
+        margin-top: 30px;
+        width: fit-content; /* Increased width */
+        background-color: #f7f7f6; /* Stylish light green */
+        padding: 20px; /* Increased padding */
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        position: fixed; /* Fix sidebar position */
+        top: 70px; /* Start below header */
+        height: calc(100vh - 70px); /* Full height minus header */
+        z-index: 0; /* Sidebar appears below footer */
+        overflow-y: auto; /* Allow scrolling within sidebar */
+    }
+
+    main {
+        flex-grow: 1;
+        padding: 10px;
+        margin-left: 200px; /* Space from the sidebar */
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+
+    .sidebar {
+        display: none; /* Hide sidebar on mobile */
+        position: fixed;
+        top: 60px;
+        left: 0;
+        height: fit-content;
+        width: 150px;
+        background-color: #f7f7f6; /* Match sidebar background */
+        z-index: 20; /* Ensure it appears over content */
+    }
+    .hedersider {
+        display: none; /* Hide sidebar on mobile */
+        position: fixed;
+        top: 60px;
+        left: 0;
+        height: fit-content;
+        width: 150px;
+        background-color: #f7f7f6; /* Match sidebar background */
+        z-index: 20; /* Ensure it appears over content */
+    }
+    .header-toggle {
+        display: block;
+        color: white; /* Show toggle button on mobile */
+    }
+    .menu-toggle {
+       display: block; 
+        display: relative;
+        position: fixed;
+        top:70px;
+        z-index: 4;
+        color: rgb(0, 0, 0); /* Show toggle button on mobile */
+    }
+
+    .sidebar.active {
+        z-index: 3;
+        padding-top:50px;
+        display: block; /* Show sidebar when active */
+    }
+
+    main {
+        margin-left: 0; /* Remove margin from main content */
+        padding: 10px; /* Adjust padding for mobile */
+    }
+
+    header {
+        padding: 15px 20px; /* Add padding to the header */
+    }
+
+    h1 {
+        margin-left: 10px; /* Margin between the menu toggle and title */
+    }
+
+    
+    header button {
+        margin-left: 10px; /* Space between navigation button and theme toggle */
+        background-color: #ffffff; /* White background for the button */
+        border: none;
+        color: #4CAF50; /* Green text */
+        padding: 10px 15px; /* Padding for better click area */
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: background-color 0.3s; /* Smooth transition for hover effect */
+    }
+
+    header button:hover {
+        background-color: #d0f12d; /* Change color on hover */
+    }
+}
+
+.sidebar ul li a.active {
+    cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAABwCAIAAADLM1kXAAAAWElEQVRIDbXBAQEAAAABIP6W8nBbAABAAAAAAO6W8pQAwAAAAAAAAAAAAAABwAAAAA0CnIAAAAAAElFTkSuQmCC"), auto; /* Custom cursor for active link */
+}

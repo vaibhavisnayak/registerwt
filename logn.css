@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+#bod {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 10px;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(./food-healthy.jpg), #000;
+  z-index: -2;
+  background-position: center;
+  background-size: cover;
+}
+
+.wrapper {
+  width: 400px;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid rgba(139, 238, 155, 0.3);
+  backdrop-filter: blur(1px);
+  background-color: rgba(2, 13, 2, 0.3);
+}
+
+#welcome {
+  padding: 27px;
+}
+
+#form1, #forlogin {
+  flex-direction: column;
+  display: none;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #f9f9f9;
+}
+
+.input-field {
+  position: relative;
+  border-bottom: 2px solid #070707;
+  margin: 15px 0;
+}
+
+.input-field label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: #1c1b1b;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.15s ease;
+}
+
+.input-field input {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #0b0b0b;
+}
+
+.input-field input:focus ~ label,
+.input-field input:valid ~ label {
+  font-size: 0.8rem;
+  top: 10px;
+  transform: translateY(-120%);
+}
+
+.forget {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 25px 0 35px 0;
+  color: #090909;
+}
+
+.forget label {
+  display: flex;
+  align-items: center;
+}
+
+.forget label p {
+  margin-left: 8px;
+}
+
+.wrapper a {
+  color: #efefef;
+  text-decoration: none;
+}
+
+.wrapper a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background: #f6f5f5;
+  color: #000;
+  font-weight: 600;
+  border: 2px solid transparent;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  color: #060606;
+  border-color: #f5f2f2;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.register {
+  text-align: center;
+  margin-top: 30px;
+  color: #0a0909;
+}
+
+.about-text {
+  width: 100%;
+  padding: 100px 0;
+  background-color: #5ca46f;
+  z-index: 2;
+}
+
+.about-text h1 {
+  text-align: center;
+  color: rgba(36, 16, 16, 0.566);
+}
+
+.about-text p {
+  color: #182a2c;
+  letter-spacing: 1px;
+  line-height: 28px;
+  font-size: 18px;
+  margin-bottom: 45px;
+  padding: 5%;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  z-index: 2;
+}
+
+.social-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+  color: #97a2a3;
+  text-align: center;
+  line-height: 40px;
+  font-size: 38px;
+}
+
+.social-icon:hover {
+  color: #314e52;
+  cursor: pointer;
+}
+
+footer {
+  padding: 20px 0;
+  background: #182f32;
+  z-index: 2;
+}
+
+#theme {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.dark-theme {
+  background: url(./healthy-food.jpeg), black;
+}
+
+.dark-theme #theme {
+  background: white;
+  color: black;
+}
+
+.dark-theme .about-text {
+  color: black; /* Text color for dark theme */
+}
+
+#box {
+  transition: transform 2s;
+  perspective: 1000px; /* Enable perspective for 3D rotation */
+}
+
+.rotate {
+  transform: rotateY(90deg);
+}
+
+/* Responsive styles */
+@media (max-width: 600px) { /* Mobile */
+  h2 {
+      font-size: 1.2rem;
+  }
+  .wrapper {
+      padding: 20px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) { /* Tablet */
+  h2 {
+      font-size: 1.5rem;
+  }
+  .wrapper {
+      padding: 25px;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) { /* Laptop */
+  h2 {
+      font-size: 1.75rem;
+  }
+  .wrapper {
+      padding: 30px;
+  }
+}
+.error-message {
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
