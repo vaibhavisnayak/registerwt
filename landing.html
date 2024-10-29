@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <title>Home</title>
+  
+</head>
+<body onload="displayUsername()">
+
+  <button onclick="toggleDarkMode()" class="dark-mode-toggle-button">
+    <span class="icon-wrapper">
+        <i class="fas fa-moon"></i> <!-- Moon icon -->
+    </span>
+</button>
+
+  <!-- Navigation Bar -->
+  <div class="navigation-bar">
+    <div class="nav-title">NutriBite</div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+    </div>
+    <div class="user-welcome-message" id="welcomeMessage">Welcome, Guest</div>
+  </div>
+
+
+  <!-- Carousel Section -->
+  <div class="image-carousel">
+    <div class="carousel-images" id="carouselImages">
+      <img src="images/pexels-ella-olsson-572949-1640777.jpg" alt="Recipe Slider">
+      <img src="images/pexels-janetrangdoan-1099680.jpg" alt="Recipe Slider">
+      <img src="images/pexels-sydney-troxell-223521-718742.jpg" alt="Recipe Slider">
+      <img src="images/pexels-ella-olsson-572949-1640775.jpg" alt="Recipe Slider">
+      <img src="images/pexels-fotios-photos-1161682.jpg" alt="Recipe Slider">
+      <img src="images/pexels-foodie-factor-162291-566566.jpg" alt="Recipe Slider">
+    </div>
+  </div>
+  <h3 style=" padding: 50px; font-size: 30px;">Categories </h3>
+  <div class="categories-section">
+    
+    <div class="category-card">
+      <i class='fas fa-bread-slice' style='font-size:20px; margin-right: 10px;color:rgb(160, 121, 47)';></i>Breakfast</div>
+    <div class="category-card"><i class='fas fa-hamburger'  style='font-size:20px; margin-right: 10px;color:rgb(237, 222, 124)'></i>Lunch</div>
+    <div class="category-card"><i class='fas fa-bacon'  style='font-size:20px; margin-right: 10px;color:rgb(134, 26, 26)'></i>Dinner</div>
+    <div class="category-card"><i class='fas fa-ice-cream'  style='font-size:20px; margin-right: 10px;color:rgb(49, 110, 130)'></i>Dessert</div>
+    <div class="category-card"><i class='fas fa-leaf'  style='font-size:20px; margin-right: 10px;color:rgb(27, 107, 39)'></i>Vegan</div>
+</div>
+  <!-- Recipe Section with Flip Cards -->
+   <h3 style="padding-top: 50px; font-size: 30px;"> Simple and Tasty Recipes</h3>
+   <h4 style="text-align: center;margin-bottom: 40px;"> Wholesome Recipes for Every Craving </h4>
+  <div class="recipe-section">
+    <div class="recipe-card-container">
+      <div class="recipe-card">
+        <div class="recipe-card-front">
+          <img src="images/img1.png" class="img-fluid" alt="Recipe 1">
+        </div>
+        <div class="recipe-card-back">
+          <a href="#" class="recipe-button">Go to Recipe</a>
+        </div>
+      </div>
+      <h4 style="text-align: center;">Red Sauce Pasta</h4>
+    </div>
+    <div class="recipe-card-container">
+      <div class="recipe-card">
+        <div class="recipe-card-front">
+          <img src="images/brioche.png" class="img-fluid" alt="Recipe 2">
+        </div>
+        <div class="recipe-card-back">
+          <a href="#" class="recipe-button">Go to Recipe</a>
+        </div>
+      </div>
+      <h4 style="text-align: center;">Brioche Toast</h4>
+    </div>
+    <div class="recipe-card-container">
+      <div class="recipe-card">
+        <div class="recipe-card-front">
+          <img src="images/pexels-brettjordan-2297961.jpg" class="img-fluid" alt="Recipe 3">
+        </div>
+        <div class="recipe-card-back">
+          <a href="#" class="recipe-button">Go to Recipe</a>
+        </div>
+      </div>
+      <h4 style="text-align: center;">Eggs Benedict</h4>
+    </div>
+    <div class="recipe-card-container">
+      <div class="recipe-card">
+        <div class="recipe-card-front">
+          <img src="images/pexels-janetrangdoan-1099680.jpg" class="img-fluid" alt="Recipe 3">
+        </div>
+        <div class="recipe-card-back">
+          <a href="#" class="recipe-button">Go to Recipe</a>
+        </div>
+      </div>
+      <h4 style="text-align: center;">Acai Bowl</h4>
+    </div>
+    <div class="recipe-card-container">
+      <div class="recipe-card">
+        <div class="recipe-card-front">
+          <img src="images/pexels-iina-luoto-460132-1211887.jpg" class="img-fluid" alt="Recipe 3">
+        </div>
+        <div class="recipe-card-back">
+          <a href="#" class="recipe-button">Go to Recipe</a>
+        </div>
+      </div>
+      <h4 style="text-align: center;">Caesar Salad</h4>
+    </div>
+    <div class="recipe-card-container">
+      <div class="recipe-card">
+        <div class="recipe-card-front">
+          <img src="images/pexels-dana-tentis-118658-1213710.jpg" class="img-fluid" alt="Recipe 3">
+        </div>
+        <div class="recipe-card-back">
+          <a href="#" class="recipe-button">Go to Recipe</a>
+        </div>
+      </div>
+      <h4 style="text-align: center;">Cobb Salad</h4>
+    </div>
+    <div class="recipe-card-container">
+      <div class="recipe-card">
+        <div class="recipe-card-front">
+          <img src="images/pexels-pixabay-236813.jpg" class="img-fluid" alt="Recipe 3">
+        </div>
+        <div class="recipe-card-back">
+          <a href="#" class="recipe-button">Go to Recipe</a>
+        </div>
+      </div>
+      <h4 style="text-align: center;">Avocado Toast </h4>
+    </div>
+    <div class="recipe-card-container">
+      <div class="recipe-card">
+        <div class="recipe-card-front">
+          <img src="images/pexels-sydney-troxell-223521-718742.jpg" class="img-fluid" alt="Recipe 3">
+        </div>
+        <div class="recipe-card-back">
+          <a href="#" class="recipe-button">Go to Recipe</a>
+        </div>
+      </div>
+      <h4 style="text-align: center;">Chicken Parm</h4>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="site-footer">
+    <p>Deliciousness to your inbox. Subscribe for healthy recipes!</p>
+    <form class="d-flex justify-content-center">
+      <input type="email" id="email" placeholder="Enter your email" >
+      <button type="submit" id="footerbtn">Join</button>
+    </form>
+  </div>
+
+  <!-- JavaScript for Dark Mode, Username, and Carousel -->
+  <script src="js/landing.js"></script>
+  
+
+</body>
+</html>
