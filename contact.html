@@ -14,23 +14,26 @@
         <div class="contact-box">
             <div class="container-left">
                 <h3>Fill the Form</h3>
-                <form id="contactForm" onsubmit="return validateForm()">
+                <form id="contactForm" onsubmit="return handleFormSubmit()">
                     <div class="input-row">
                         <div class="input-group">
                             <label>Name<span class="imp">*</span></label>
-                            <input type="text" id="name" placeholder="Enter your Name" required>
+                            <input type="text" id="name" placeholder="Enter your Name" required oninput="validateName()">
+                            <span id="nameError" style="color:red;"></span>
                         </div>
 
                         <div class="input-group">
                             <label>Phone<span class="imp">*</span></label>
-                            <input type="text" id="phone" placeholder="+91 1234567890" required>
+                            <input type="text" id="phone" placeholder="+91 1234567890" required oninput="validatePhone()">
+                            <span id="phoneError" style="color:red;"></span>
                         </div>
                     </div>
                     
                     <div class="input-row">
                         <div class="input-group">
                             <label>Email<span class="imp">*</span></label>
-                            <input type="email" id="email" placeholder="youremail@gmail.com" required>
+                            <input type="email" id="email" placeholder="youremail@gmail.com" required oninput="validateEmail()">
+                            <span id="emailError" style="color:red;"></span>
                         </div>
 
                         <div class="input-group">
@@ -70,7 +73,17 @@
                 </div>
             </div>
         </div>
+
+        <div id="overlay">
+            <div id="progress-container">
+                <div id="progress-circle" class="progress-circle"></div>
+                <div id="tick" class="tick">&#10003;</div> <!-- Unicode for a checkmark -->
+            </div>
+        </div>
     </div>
-    <script src="./js/contact.js"></script>
+
+    <script src="./js/contact.js">
+       
+    </script>
 </body>
 </html>

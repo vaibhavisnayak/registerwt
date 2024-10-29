@@ -281,3 +281,94 @@ iframe {
         padding-right: 10px;
     }
 }
+
+/* Add a background overlay */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 999;
+    display: none; /* Initially hidden */
+}
+
+/* Center the popup container */
+#progress-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background-color: white; /* White background for the popup */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none; /* Initially hidden */
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Horizontally center content */
+    align-items: center; /* Vertically center content */
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent overflow */
+    position: relative;
+}
+
+/* Centering content inside the popup */
+.tick {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center both elements inside the container */
+}
+
+.progress-circle {
+    position: absolute;
+    top: 22%;
+    left: 24%;
+    transform: translate(-50%, -50%); /* Center both elements inside the container */
+}
+
+/* Circular progress */
+.progress-circle {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    opacity: 1;
+    transition: opacity 0.5s;
+    z-index: 1; /* Ensure it's on top initially */
+}
+
+/* Tick mark hidden initially */
+.tick {
+    font-size: 50px;
+    color: #28a745; /* Green */
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 2; /* Ensure it's above the spinner when shown */
+}
+
+/* Animation for the spinning circle */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Hide the spinner and show the tick */
+.show-tick .progress-circle {
+    opacity: 0;
+}
+
+.show-tick .tick {
+    opacity: 1;
+}
+
+
+
+

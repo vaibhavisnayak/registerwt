@@ -43,6 +43,10 @@ font-weight: bold;
 color: #4a7c59;
 }
 
+.user-welcome-message
+{
+  display: inline-block;
+}
 /* Right-aligned welcome message */
 
 
@@ -164,7 +168,7 @@ background-image: linear-gradient(to top, rgba(132, 211, 164, 0.949), rgb(23, 12
   margin-top: 10%;
   padding: 70px;
   text-align: center;
-  background-image: url(images/footer.jpg);
+  background-image: url(../images/footer.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -193,7 +197,6 @@ background-image: linear-gradient(to top, rgba(132, 211, 164, 0.949), rgb(23, 12
 
   /* Dark Mode Button */
   .dark-mode-toggle-button {
-    position: fixed;
     top: 57px;
     right: 10%;
     padding: 10px;

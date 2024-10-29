@@ -10,10 +10,501 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/bmi.css">
+        <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+body{
+    background: #e0f2f1;
+}
+h2.page-heading {
+                margin: 20px;
+                font-size: 2.5rem;
+                text-transform: uppercase;
+                background: linear-gradient(135deg, #00796b, #80deea);
+                padding-bottom: 10px;
+                border-bottom: 2px solid #004d40;
+                text-align:  center;
+            }
+
+.calculator-sec{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 80vh;
+    width: 100vw;
+    padding: 10px;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 500px;
+    background-color: #ffffff;
+    border-radius: 25px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+.content{
+  width: 50%;}
+
+.sub-container {
+    display: flex;
+}
+
+.toggle-btn {
+    width: 50%;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.toggle-btn.active {
+    background-color: #00796b;
+    color: white;
+    border-bottom: 3px solid #004d40;
+}
+
+.toggle-btn:hover {
+    background-color: #004d40;
+    color: white;
+}
+
+.form-container {
+    padding: 30px 20px;
+}
+
+.form-container form {
+    display: none;
+}
+
+.form-container form.active {
+    display: block;
+}
+
+.form-control,
+.input-group-text {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #00796b;
+    box-shadow: 0 0 5px rgba(0, 121, 107, 0.5);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.form-container .btn {
+    border-radius: 30px;
+    padding: 12px 25px;
+    background-color: #00796b;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #004d40;
+}
+
+.form-container .btn-check+.btn {
+    background-color: #b2dfdb;
+    border: 1px solid #ced4da;
+    transition: background-color 0.3s ease;
+}
+
+.form-container .btn-check:checked+.btn {
+    background-color: #00796b;
+    color: white;
+}
+
+.form-container .btn .fa-solid {
+    margin-right: 8px;
+}
+#result {
+    margin-top: 20px;
+    background-color: #b2dfdb;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #004d40;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+#result.active{
+    display: block;
+}
+#result.hidden{
+    display: none;
+}
+
+#result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            transition: all 0.3s ease;
+        }
+
+        #result.active {
+            display: block;
+        }
+
+        .progress-bar {
+            height: 30px;
+            border-radius: 5px;
+            transition: width 0.3s ease;
+        }
+
+        /* Different colors for BMI categories */
+        .progress-bar-underweight {
+            background-color: rgb(134, 216, 244);
+        }
+
+        .progress-bar-normal {
+            background-color: green;
+        }
+
+        .progress-bar-overweight {
+            background-color: yellow;
+        }
+
+        .progress-bar-obese {
+            background-color: orange;
+        }
+
+        .progress-bar-severely-obese {
+            background-color: red;
+        }
+
+
+
+
+.explanation {
+  width: 100%;
+  margin: 0 auto;
+  background-color: teal;
+  padding-inline: 24px;
+  margin-bottom: 127.5px;
+  margin-top: 265px;
+}
+
+.explanation .curve-left {
+  display: none;
+}
+
+.explanation h2 {
+  margin-block: 48px 32px;
+}
+
+/* Habits */
+
+.positive-habits {
+  background: var(
+    --gradient-1,
+    linear-gradient(
+      315deg,
+      rgba(214, 230, 254, 0.25) 0%,
+      rgba(214, 252, 254, 0) 100%
+    )
+  );
+  margin: 0 auto;
+  padding-inline: 20px 29px;
+  padding-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 72px;
+}
+
+.positive-habits img {
+  margin-bottom: 32px;
+}
+
+.positive-habits h3 {
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+/* Limitations */
+
+.limitations {
+  padding-inline: 24px;
+  margin-bottom: 96px;
+}
+
+.limitations .curve {
+  display: none;
+  position: absolute;
+}
+
+.limitations-content {
+  text-align: center;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+}
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 56px;
+}
+
+@media (min-width: 768px) {
+
+  .explanation {
+    display: flex;
+    align-items: center;
+    padding-inline: 39px 43px;
+    margin-top: 100px;
+  }
+  
+
+  .explanation .image {
+    min-width: 361px;
+    max-width: 564px;
+    height: 411px;
+    align-self: flex-end;
+    transform: translateX(-75px);
+  }
+
+  .explanation img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .explanation .content {
+    width: 50%;
+    min-width: 331px;
+    max-width: 465px;
+    justify-self: center;
+  }
+
+  /* Habits */
+
+  .positive-habits {
+    padding-inline: 39px 43px;
+    border-radius: 16px;
+  }
+
+  .positive-habits > div {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .positive-habits img {
+    margin-bottom: 0px;
+  }
+
+  /* Limitations */
+
+  .limitations {
+    padding: 39px 43px;
+  }
+
+  .limitations-content {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .limitations .cards {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .card {
+    max-width: 336px;
+    padding: 32px;
+  }
+}
+
+@media (min-width: 1440px) {
+  
+  .explanation {
+    justify-content: space-between;
+    gap: 131px;
+    padding-inline: 116px;
+    position: relative;
+    margin-top: 130px;
+  }
+
+  .explanation .curve-left {
+    display: block;
+    position: absolute;
+    width: 85px;
+    height: 200px;
+    top: -32px;
+    right: 143px;
+  }
+
+  
+
+  .explanation .content {
+    margin-top: 85px;
+  }
+
+  .explanation h2 {
+    margin-top: 56px;
+  }
+
+  .explanation .image {
+    transform: translate(0);
+    height: 533px;
+    width: 564px;
+  }
+
+  .positive-habits {
+    flex-direction: row;
+    margin-bottom: 120px;
+    padding: 72px 116px 96px 116px;
+    max-width: 1392px;
+    margin: 96px auto 120px auto;
+    border-radius: 35px;
+    gap: 32px;
+  }
+
+  .positive-habits > div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 45px;
+    width: 365px;
+  }
+
+  .limitations {
+    text-align: left;
+    position: relative;
+    margin: 70px 0;
+    padding-block: 0;
+    padding-inline: 116px;
+  }
+
+  .limitations .curve {
+    display: block;
+    position: absolute;
+    width: 94px;
+    height: 122px;
+    top: 251px;
+    left: 281px;
+  }
+
+  .limitations-content {
+    text-align: left;
+    margin: 0;
+    margin-bottom: 60px;
+    width: 564px;
+  }
+
+  .limitations .cards {
+    margin-top: 80px;
+    justify-content: flex-end;
+    gap: 24px;
+    padding-left: 32px;
+  }
+
+  .card {
+    max-width: 365px;
+  }
+
+  .card.gender {
+    position: absolute;
+    top: 0;
+    right: 215px;
+    /* left: 796px; */
+    height: 232px;
+  }
+
+  .card.age {
+    height: 184px;
+    z-index: 1;
+    margin-top: 50px;
+  }
+
+  .card.muscle {
+    height: 184px;
+    z-index: 1;
+    margin-left: 8px;
+    margin-top: 50px;
+  }
+
+  .card.pregnancy {
+    transform: translate(-650px,259px);
+    z-index: 1;
+    height: 232px;
+  }
+
+  .card.race {
+    transform: translate(-199px);
+    z-index: 1;
+    height: 232px;
+  }
+}
+
+
+
+
+@media (max-width: 576px) {
+    .toggle-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .sub-container {
+        padding: 5px;
+    }
+
+    .form-container {
+        padding: 15px;
+    }
+}
+        </style>
+    
 </head>
 
 <body>
+   
+    <section class="calculator-sec">
+      <div class="content">
+        <h1>Body Mass Index Calculator</h1>
+        <p>
+          Better understand your weight in relation to your height using our
+          body mass index (BM) calculator. While BMI is not the sole
+          determinant of a healthy weight, it offers a valuable starting point
+          to evaluate your overall health and well-being.
+        </p>
+      </div>
     <div class="main-container">
         <div class="sub-container text-center">
             <button id="metric-btn" class="toggle-btn active">Metric Units</button>
@@ -111,8 +602,259 @@
             </div>
         </div>
     </div>
+</div>
+</section>
 
-    <script src="./js/bmi.js">
+
+
+<section class="explanation">
+    <div class="image">
+      <img src="assets/images/full-body-workout.jpg" alt="man-eating" />
+    </div>
+    <div class="content">
+      <h2>What your BMI result means</h2>
+      <p>
+        A BMI range of 18.5 to 24.9 is considered a 'healthy weight.'
+        Maintaining a healthy weight may lower your chances of experiencing
+        health issues later on, such as obesity and type 2 diabetes. Aim for
+        a nutritious diet with reduced fat and sugar content, incorporating
+        ample fruits and vegetables. Additionally, strive for regular
+        physical activity, ideally about 30 minutes daily for five days a
+        week.
+      </p>
+    </div>
+  </section>
+  <!-- Section Habits -->
+  <section class="positive-habits">
+    <div>
+      <img src="assets/images/icon-eating.svg"  alt="eating" />
+      <div>
+        <h3>Healthy Eating</h3>
+        <p>
+          Healthy eating promotes weight control, disease prevention, better
+          digestion, immunity, mental clarity, and mood.
+        </p>
+      </div>
+    </div>
+    <div>
+      <img src="assets/images/icon-exercise.svg" alt="exercise" />
+      <div>
+        <h3>Regular exercise</h3>
+        <p>
+          Exercise improves fitness, aids weight control, elevates mood, and
+          reduces disease risk, fostering wellness and longevity.
+        </p>
+      </div>
+    </div>
+    <div>
+      <img src="assets/images/icon-sleep.svg" alt="sleep" />
+      <div>
+        <h3>Adequate sleep</h3>
+        <p>
+          Sleep enhances mental clarity, emotional stability, and physical
+          wellness, promoting overall restoration and rejuvenation.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- Section Limitations -->
+  <section class="limitations">
+    <img src="assets/images/pattern-curved-line-right.svg" alt="curve" class="curve">
+    <div class="limitations-content">
+      <h2>Limitations of BMI</h2>
+      <p>
+        Although BMI is often a practical indicator of healthy weight, it is
+        not suited for every person. Specific groups should carefully consider
+        their BMI outcomes, and in certain cases, the measurement may not be
+        beneficial to use.
+      </p>
+    </div>
+    <div class="cards">
+      <div class="card gender">
+        <div class="card-heading">
+          <img src="assets/images/icon-gender.svg" alt="" />
+          <h4>Gender</h4>
+        </div>
+        <p>
+          The development and body fat composition of girls and boys vary
+          with age. Consequently, a child's age and gender are considered
+          when evaluating their BMI.
+        </p>
+      </div>
+      <div class="card age">
+        <div class="card-heading">
+          <img src="assets/images/icon-age.svg" alt="" />
+          <h4>Age</h4>
+        </div>
+        <p>
+          In aging individuals, increased body fat and muscle loss may cause
+          BMI to underestimate body fat content.
+        </p>
+      </div>
+      <div class="card muscle">
+        <div class="card-heading">
+          <img src="assets/images/icon-muscle.svg" alt="" />
+          <h4>Muscle</h4>
+        </div>
+        <p>
+          BMI may misclassify muscular individuals as overweight or obese,
+          as it doesn't differentiate muscle from fat.
+        </p>
+      </div>
+      <div class="card pregnancy">
+        <div class="card-heading">
+          <img src="assets/images/icon-pregnancy.svg" alt="" />
+          <h4>Pregnancy</h4>
+        </div>
+        <p>
+          Expectant mothers experience weight gain due to their growing
+          baby. Maintaining a healthy pre-pregnancy BMI is advisable to
+          minimise health risks for both mother and child.
+        </p>
+      </div>
+      <div class="card race">
+        <div class="card-heading">
+          <img src="assets/images/icon-race.svg" alt="" />
+          <h4>Race</h4>
+        </div>
+        <p>
+          Certain health concerns may affect individuals of some Black and
+          Asian origins at lower BMIs than others. To learn more, it is
+          advised to discuss this with your GP or practice nurse.
+        </p>
+      </div>
+    </div>
+  </section>
+
+    <script>
+const metricFormContainer = document.getElementById("metricForm");
+const usFormContainer = document.getElementById("usForm");
+let result = document.getElementById('result');
+function resetForm(form) {
+form.reset();
+form.classList.remove("was-validated");
+result.classList.add("hidden");  // Keep the hidden class when resetting
+result.classList.remove("active"); // Ensure the result is not active
+}
+// bmi category function
+function getBMICategory(bmi) {
+    if (bmi < 18.5) {
+        return 'Underweight';
+    } else if (bmi >= 18.5 && bmi < 24.9) {
+        return 'Normal weight';
+    } else if (bmi >= 25 && bmi < 29.9) {
+        return 'Overweight';
+    } else if (bmi >= 30 && bmi < 39.9) {
+        return 'Obese';
+    }  else if (bmi >= 40) {
+        return 'Severe Obese';
+    } else {
+        return 'Invalid BMI';
+    }
+}
+
+let metricButton = document.getElementById("metric-btn");
+let usButton = document.getElementById("us-btn");
+
+// Toggling forms on button click
+metricButton.addEventListener("click", () => {
+    resetForm(document.metricForm);
+    metricFormContainer.classList.add("active");
+    usFormContainer.classList.remove("active");
+
+    metricButton.classList.add("active");
+    usButton.classList.remove("active");
+});
+
+usButton.addEventListener("click", () => {
+    resetForm(document.usForm);
+    usFormContainer.classList.add("active");
+    metricFormContainer.classList.remove("active");
+
+    usButton.classList.add("active");
+    metricButton.classList.remove("active");
+});
+
+// Metric form 
+document.metricForm.onsubmit = function (event) {
+    event.preventDefault();
+    if (this.checkValidity()) {
+        const weight = parseFloat(document.getElementById("metric-weight").value);
+        const height = parseFloat(document.getElementById("metric-height").value) / 100;
+        const bmi = weight / (height * height);
+
+        // let bmiCat = getBMICategory(bmi);
+        let finalBmi = bmi.toFixed(2);
+        result.classList.remove("hidden");
+        result.classList.add("active");
+        // result.innerHTML = `Your BMI is : ${finalBmi} (${bmiCat})`;
+        displayResult(finalBmi);
+    } else {
+        this.classList.add("was-validated");
+    }
+};
+
+// US form 
+document.usForm.onsubmit = function (event) {
+    event.preventDefault();
+    if (this.checkValidity()) {
+        const weight = parseFloat(document.getElementById("us-weight").value);
+        const feet = parseInt(document.getElementById("us-feet").value);
+        const inches = parseInt(document.getElementById("us-inches").value);
+        const heightInInches = (feet * 12) + inches;
+        const bmi = (weight * 703) / (heightInInches * heightInInches);
+        // let bmiCat = getBMICategory(bmi);
+        let finalBmi = bmi.toFixed(2);
+        result.classList.remove("hidden");
+        result.classList.add("active");
+        // result.innerHTML = `Your BMI is : ${finalBmi} (${bmiCat})`;
+        displayResult(finalBmi);
+
+    } else {
+        this.classList.add("was-validated");
+    }
+};
+
+
+
+document.querySelectorAll('input[type="reset"]').forEach(button => {
+button.addEventListener('click', function () {
+    resetForm(this.form); // Call resetForm on the respective form
+});
+});
+
+
+function displayResult(bmi,cat) {
+            const category = getBMICategory(bmi);
+            const progressBarClass = getProgressBarClass(bmi);
+
+            result.innerHTML = `<p>Your BMI is: ${bmi} (${category})</p>
+            <div class="progress">
+                <div class="progress-bar ${progressBarClass}" role="progressbar" style="width: ${getProgressBarWidth(bmi)}%"></div>
+            </div>`;
+            result.classList.add('active');
+            result.scrollIntoView({ behavior: 'smooth' });
+        }
+
+
+
+        // Get Progress Bar Class based on BMI
+        function getProgressBarClass(bmi) {
+            if (bmi < 18.5) return 'progress-bar-underweight';
+            if (bmi < 24.9) return 'progress-bar-normal';
+            if (bmi < 29.9) return 'progress-bar-overweight';
+            if (bmi < 39.9) return 'progress-bar-obese';
+            return 'progress-bar-severely-obese';
+        }
+
+        // Get Progress Bar Width based on BMI
+        function getProgressBarWidth(bmi) {
+            if (bmi < 18.5) return 10; // Underweight: 10%
+            if (bmi < 24.9) return 25; // Normal weight: 25%
+            if (bmi < 29.9) return 50; // Overweight: 50%
+            if (bmi < 39.9) return 75; // Obese: 75%
+            return 100; // Severely Obese: 100%
+        }
 
     </script>
 </body>
