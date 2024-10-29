@@ -101,8 +101,8 @@ function register() {
   if (allValid) {
       // Store only email and password in cookies
       updateCookie('emails', inputs[1].value);  // Store email
-      updateCookie('passwords', inputs[3].value);
-      updateCookie('username', inputs[0].value);  // Store password
+      updateCookie('passwords', inputs[3].value); // Store password
+      updateCookie('username', inputs[0].value); 
 
       alert('Registration successful! Please log in.');
       showLogin();
@@ -168,7 +168,8 @@ function login() {
   } else if (passwordInput.value !== storedPasswords[userIndex]) {
       showError(passwordInput, 'Password is incorrect');
   } else {
-      alert('Login successful!'); // Placeholder for successful login action
+      alert('Login successful!');
+      updateCookie("isLogin","true");// Placeholder for successful login action
       window.location.href="landing.html";
   }
 }
