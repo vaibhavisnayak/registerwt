@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-logo">Recipe Collection</div>
+        <ul class="navbar-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#ingredients">Ingredients</a></li>
+            <li><a href="#directions">Directions</a></li>
+            <li><a href="index.html">Back to Collection</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1 id="recipe-title"></h1>
+    </header>
+
+    <div id="recipe-list" class="row"></div>
+
+    <div class="recipe-content">
+        <div id="ingredients" class="recipe-info">
+            <h2>Ingredients</h2>
+            <ul id="ingredients-list"></ul>
+        </div>
+
+        <div id="directions" class="recipe-info">
+            <h2>Directions</h2>
+            <ol id="directions-list"></ol>
+        </div>
+    </div>
+
+    <script src="recipe.js"></script>
+</body>
+</html>
