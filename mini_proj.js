@@ -34,6 +34,10 @@ function validatePassword(password) {
   return password.length >= 6; // Password must be at least 6 characters
 }
 
+function validateConfirmPassword(password, confirmPassword) {
+  return password === confirmPassword; // Checks if password and confirm password match
+}
+
 function showError(element, message) {
   const errorElement = element.parentElement.querySelector(".error-message");
   errorElement.innerHTML = message + " <span style='color:red;'>*</span>";
@@ -83,6 +87,16 @@ function register() {
           allValid = false;
       }
   });
+
+  // Get password and confirm password values
+  const password = inputs[3].value; // Assuming password is the fourth input
+  const confirmPassword = inputs[4].value; // Assuming confirm password is the fifth input
+
+  // Validate confirm password
+  if (!validateConfirmPassword(password, confirmPassword)) {
+      showError(inputs[4], 'Passwords do not match');
+      allValid = false;
+  }
 
   if (allValid) {
       // Store only email and password in cookies
@@ -154,6 +168,7 @@ function login() {
       showError(passwordInput, 'Password is incorrect');
   } else {
       alert('Login successful!'); // Placeholder for successful login action
+      window.location.href="landing.html";
   }
 }
 
@@ -169,11 +184,14 @@ function dark() {
       body.style.backgroundSize = "cover";
       themeButton.style.background = "white";
       themeButton.style.color = "black";
+      document.querySelectorAll(".error-message").color="white";
       allTextElements.forEach(el => el.style.color = "white"); // Change all text to white
       inputElements.forEach(input => {
           input.style.borderColor = "white"; // Change input border color to white
           input.style.color = "white"; // Change input text color to white
           input.style.backgroundColor = "transparent"; // Keep background transparent
+          input.style.borderBottom ="2px solid #fff7f7";
+          
       });
       darkness = "on";
   } else {
@@ -185,7 +203,8 @@ function dark() {
       inputElements.forEach(input => {
           input.style.borderColor = "black"; // Reset input border color
           input.style.color = "black"; // Reset input text color to black
-          input.style.backgroundColor = "transparent"; // Keep background transparent
+          input.style.backgroundColor = "transparent";
+          input.style.borderBottom ="none"; // Keep background transparent
       });
       darkness = "off";
   }
