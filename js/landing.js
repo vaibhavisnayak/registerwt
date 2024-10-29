@@ -19,6 +19,7 @@ function toggleDarkMode() {
     }
 }
 
+
 // Function to fetch username from cookies
 function getCookieValue(cookieName) {
   const allCookies = document.cookie.split(';');
@@ -31,11 +32,18 @@ function getCookieValue(cookieName) {
   return null;
 }
 
+function getAlphabets(str) {
+  return str.match(/[a-zA-Z\s]+/g).join(''); // Extracts only alphabet characters
+}
 // Set username from cookie in the welcome message
 function displayUsername() {
-  const username = getCookieValue("guestName") || "Guest"; // Changed to 'guestName'
+  let username = getCookieValue("username") || "Guest";
+  username = decodeURIComponent(username);
+  username = getAlphabets(username);// Changed to 'guestName'
+
   document.getElementById("welcomeMessage").textContent = `Welcome, ${username}`;
 }
+
 
 // Carousel slider functionality
 let currentIndex = 0;
@@ -50,4 +58,4 @@ function slideCarousel() {
 setInterval(slideCarousel, 3000); // Slide every 3 seconds
 
 // Call displayUsername when the page loads
-window.onload = displayUsername; // Ensure username is displayed on page load
+window.onload = displayUsername(); // Ensure username is displayed on page load
